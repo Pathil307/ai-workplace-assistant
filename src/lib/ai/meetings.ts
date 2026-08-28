@@ -72,7 +72,7 @@ const nextId = () => `ai-${Date.now().toString(36)}-${counter++}`;
 
 /** Deterministic extraction. Only content present in the notes is used. */
 export function analyseMeeting(input: MeetingInput): MeetingAnalysis {
-  const spec = meetingPrompt(input);
+  const spec = meetingPrompt({ ...input });
   const participants = input.participants
     .split(/[,\n;]/)
     .map((p) => p.trim())
