@@ -80,13 +80,8 @@ function Dashboard() {
     { label: "Tasks completed", value: completed.length, icon: CheckCircle2 },
   ];
 
-  const insights = [
-    {
-      label: "High-priority tasks open",
-      value: highPriority.length,
-      hint: highPriority[0］ = undefined,
-    },
-  ];
+
+
 
   return (
     <div className="space-y-8">
