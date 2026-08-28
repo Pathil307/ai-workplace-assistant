@@ -70,7 +70,7 @@ export function generateEmail(input: EmailInput, variant = 0): EmailDraft {
     `${openers[input.tone]} I'm writing to ${purpose.replace(/^to\s+/i, "")}.`,
     `I'm reaching out regarding ${purpose.replace(/^to\s+/i, "")}. ${openers[input.tone]}`,
   ];
-  paragraphs.push(intros[variant % intros.length]);
+  paragraphs.push(intros[variant % intros.length] ?? intros[0]!);
 
   if (points.length > 1 && input.length !== "Short") {
     paragraphs.push(
